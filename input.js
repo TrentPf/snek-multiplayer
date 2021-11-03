@@ -1,3 +1,5 @@
+const { connect } = require("http2");
+
 let connection;
 
 const setupInput = function (conn) {
@@ -26,6 +28,12 @@ const handleUserInput = function (data) {
   if (data === "d") {
     connection.write("Move: right");
   }  
+  if (data === "t") {
+    connection.write("Say: Oy!");
+  }
+  if (data === "m") {
+    connection.write("Say: get out of my way");
+  }
 };
 
 module.exports = setupInput;
